@@ -75,10 +75,10 @@ func main() {
 		Endereco: Endereco{Logradouro: "Rua Maria Adelaide Antunes", Numero: 70, Bairro: "Pedro Sancho Vilela",
 			Cidade: "Santa Rita do Sapucaí", Estado: "MG", Cep: "37540-000"}})
 
-	router.HandleFunc("/contato", GetCliente).Methods("GET")
-	router.HandleFunc("/contato/{id}", GetPessoa).Methods("GET")
-	router.HandleFunc("/contato{id}", CreatePessoa).Methods("POST")
-	router.HandleFunc("/contato{id}", DeletePessoa).Methods("DELETE")
+	router.HandleFunc("/contato", GetCliente).Methods("GET")     // mostra todos os clientes http://localhost:8000/contato
+	router.HandleFunc("/contato/{id}", GetPessoa).Methods("GET") // mostra um cliente especifico http://localhost:8000/contato/2
+	router.HandleFunc("/contato/{id}", CreatePessoa).Methods("POST")
+	router.HandleFunc("/contato/{id}", DeletePessoa).Methods("DELETE")
 	log.Fatal(http.ListenAndServe(":8000", router))
 
 }
