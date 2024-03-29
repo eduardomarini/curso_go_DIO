@@ -2,19 +2,29 @@ package main
 
 import "testing"
 
-func ShouldSumCorrect(t *testing.T) { // convenção de nomes ShouldSumCorrect (assinatura do método)
-	teste := soma(1, 2, 3)
-	resultado := 6
+// padrão triple A -> AAA
+// Arrange -> Organizar
+// Act -> Agir
+// Assert -> Afirmar (verificar as asserções)
 
+func ShouldSumCorrect(t *testing.T) { // convenção de nomes ShouldSumCorrect (assinatura do método)
+	// arrange
+	teste := soma(1, 2, 3)
+	// act
+	resultado := 6
+	// assert
 	if teste != resultado {
 		t.Error("Valor esperado: ", resultado, "Valor obtido: ", teste)
 	}
 }
 
 func ShouldSumIncorret(t *testing.T) { //ShouldSumIncorret
+	// arrange
 	teste := soma(3, 2, 1)
+	// act
 	resultado := 7
 
+	// assert
 	if teste != resultado {
 		t.Error("Valor esperado: ", resultado, "Valor obtido: ", teste)
 	}
