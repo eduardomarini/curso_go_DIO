@@ -48,3 +48,5 @@ func TestMultiplica2(t *testing.T) { //ShouldMultiplyCorrect
 		t.Error("Valor esperado: ", resultado, "Valor obtido: ", teste)
 	}
 }
+
+// go test -v	para executar todos os testes
