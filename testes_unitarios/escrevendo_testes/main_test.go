@@ -2,35 +2,36 @@ package main
 
 import "testing"
 
-// padrão triple A -> AAA
-// Arrange -> Organizar
-// Act -> Agir
-// Assert -> Afirmar (verificar as asserções)
+// Triple A - Arrange, Act, Assert
+// Arrange - Preparar o ambiente para o teste
+// Act - Executar o teste
+// Assert - Verificar se o resultado é o esperado
 
-func ShouldSumCorrect(t *testing.T) { // convenção de nomes ShouldSumCorrect (assinatura do método)
+func TestSoma(t *testing.T) { // convenção de nomes ShouldSumCorrect (assinatura do método)
 	// arrange
 	teste := soma(1, 2, 3)
 	// act
 	resultado := 6
+
 	// assert
 	if teste != resultado {
 		t.Error("Valor esperado: ", resultado, "Valor obtido: ", teste)
 	}
 }
 
-func ShouldSumIncorret(t *testing.T) { //ShouldSumIncorret
-	// arrange
+func TestSoma2(t *testing.T) { //ShouldSumIncorret
+	//arrange
 	teste := soma(3, 2, 1)
-	// act
+	//act
 	resultado := 7
 
-	// assert
+	//assert
 	if teste != resultado {
 		t.Error("Valor esperado: ", resultado, "Valor obtido: ", teste)
 	}
 }
 
-func ShouldMultiplyCorrect(t *testing.T) { //ShouldMultiplyCorrect
+func TestMultiplica(t *testing.T) { //ShouldMultiplyCorrect
 	teste := multiplica(10, 10)
 	resultado := 100
 
@@ -39,7 +40,7 @@ func ShouldMultiplyCorrect(t *testing.T) { //ShouldMultiplyCorrect
 	}
 }
 
-func ShouldMultiplyIncorrect(t *testing.T) { //ShouldMultiplyCorrect
+func TestMultiplica2(t *testing.T) { //ShouldMultiplyCorrect
 	teste := multiplica(10, 10)
 	resultado := 1000
 
